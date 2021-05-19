@@ -7,6 +7,8 @@
 
 import Foundation
 
+#if os(macOS)
+
 /** The default FileManager */
 public let Files = FileManager.default
 
@@ -84,3 +86,5 @@ public func open(forWriting path: String, overwrite: Bool = false, encoding: Str
 	let fixedpath = path.hasPrefix("~") ? NSString(string: path).expandingTildeInPath : path
 	return try open(forWriting: URL(fileURLWithPath: fixedpath, isDirectory: false), overwrite: overwrite, encoding: encoding)
 }
+
+#endif

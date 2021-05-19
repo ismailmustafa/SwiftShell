@@ -9,6 +9,7 @@ import Foundation
 
 // MARK: Process
 
+#if os(macOS)
 extension Process {
 	/// Launches process.
 	///
@@ -57,3 +58,4 @@ extension Process {
 		}
 	}
 }
+#endif

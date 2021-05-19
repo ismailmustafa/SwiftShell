@@ -7,6 +7,8 @@
 
 import Foundation
 
+#if os(macOS)
+
 public protocol Context: CustomDebugStringConvertible {
 	var env: [String: String] { get set }
 	var stdin: ReadableStream { get set }
@@ -140,3 +142,5 @@ public final class MainContext: Context, CommandRunning {
 }
 
 public let main = MainContext()
+
+#endif

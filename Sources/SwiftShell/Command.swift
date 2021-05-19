@@ -8,6 +8,8 @@
 import Dispatch
 import Foundation
 
+#if os(macOS)
+
 // MARK: exit
 
 /**
@@ -465,3 +467,5 @@ public func runAsyncAndPrint(_ executable: String, _ args: Any ..., file: String
 public func runAndPrint(_ executable: String, _ args: Any ...) throws {
 	try main.runAndPrint(executable, args)
 }
+
+#endif

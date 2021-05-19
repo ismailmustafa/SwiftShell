@@ -9,6 +9,8 @@ import Foundation
 
 // MARK: Bash
 
+#if os(macOS)
+
 extension CommandRunning {
 	@available(*, unavailable, message: "Use `run(bash: ...).stdout` instead.")
 	@discardableResult public func run(bash bashcommand: String, combineOutput: Bool = false) -> String {
@@ -94,3 +96,5 @@ public func runAsyncAndPrint(bash bashcommand: String, file: String = #file, lin
 public func runAndPrint(bash bashcommand: String) throws {
 	try main.runAndPrint(bash: bashcommand)
 }
+
+#endif

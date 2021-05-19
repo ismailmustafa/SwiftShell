@@ -7,6 +7,7 @@
 
 import Foundation
 
+#if os(macOS)
 /// Lets String run commands using itself as stdin.
 extension String: CommandRunning {
 	public var context: Context {
@@ -26,3 +27,4 @@ extension String {
 		split(separator: "\n").map(String.init)
 	}
 }
+#endif

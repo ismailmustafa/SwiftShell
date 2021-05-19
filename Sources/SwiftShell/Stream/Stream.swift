@@ -6,6 +6,8 @@
 
 import Foundation
 
+#if os(macOS)
+
 extension FileHandle {
 	/// Reads what is available, as a String.
 	/// - Parameter encoding: the encoding to use.
@@ -205,3 +207,5 @@ public func streams() -> (WritableStream, ReadableStream) {
 	let pipe = Pipe()
 	return (FileHandleStream(pipe.fileHandleForWriting, encoding: .utf8), FileHandleStream(pipe.fileHandleForReading, encoding: .utf8))
 }
+
+#endif
